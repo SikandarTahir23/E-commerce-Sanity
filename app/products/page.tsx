@@ -1,5 +1,4 @@
 import { client } from "@/sanity/lib/client";
-import { Any } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,7 +17,7 @@ export default async function Products() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-12">
-      {data.map((val: Any, i: Any) => (
+      {data.map((val: any, i:any) => (
         <Link href={`/products/${val._id}`} key={i}>
           <div className="w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out dark:bg-gray-800 dark:border-gray-700">
             <Image

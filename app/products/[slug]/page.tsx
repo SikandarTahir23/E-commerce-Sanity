@@ -4,7 +4,7 @@ import { client } from '@/sanity/lib/client';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
-import { Any } from 'next-sanity';
+
 
 interface Product {
   _id: string;
@@ -38,7 +38,7 @@ export default function Product() {
         }`;
         try {
           const response = await client.fetch(query);
-          const index = response.findIndex((item: Any) => item._id == id);
+          const index = response.findIndex((item: any) => item._id == id);
           const data = response[index];
           setProduct(data || null);
         } catch (error) {
